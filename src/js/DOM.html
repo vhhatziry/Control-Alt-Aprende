@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p> El autor del libro solicitado es</p>
+    <p id="dato"></p>
+    <script>
+        var texto, parse, xmlDom;
+
+        text = "<libreria>" +
+            "<libro><titulo> Everyday Italian</titulo>" +
+            "<autor>Giada De Laurentiis</autor>" +
+            "<fecha>2005</fecha></libro>" +
+            "</libreria>";
+        
+        parse = new DOMParser();
+        xmlDom = parse.parseFromString(text, "text/xml");
+        document.getElementById("dato").innerHTML = xmlDom.getElementsByTagName("autor")[0].childNodes[0].nodeValue;
+            
+    </script>
+</body>
+</html>

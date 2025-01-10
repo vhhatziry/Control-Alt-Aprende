@@ -1,0 +1,125 @@
+/* styles.css */
+
+/* General */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+header {
+    background: #004080;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.8rem;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    background: #003366;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px;
+}
+
+nav ul li a:hover {
+    background: #002244;
+    border-radius: 4px;
+}
+
+/* Sections */
+section {
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
+    color: #004080;
+    border-bottom: 2px solid #004080;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+/* Inicio: Novedades y Lo más Destacado */
+#novedades, #destacados {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 8px;
+}
+
+#novedades ul, #destacados ul {
+    list-style: square inside;
+    padding: 0;
+}
+
+#novedades h3, #destacados h3 {
+    color: #004080;
+    margin-bottom: 10px;
+}
+
+#novedades li, #destacados li {
+    margin-bottom: 10px;
+    color: #555;
+}
+
+/* Cursos */
+#cursos ul {
+    list-style: circle inside;
+    padding: 0;
+}
+
+#cursos li {
+    margin-bottom: 8px;
+}
+
+/* Foro */
+#foro {
+    text-align: center;
+}
+
+/* Mi Perfil */
+#perfil {
+    text-align: center;
+}
+
+/* Footer */
+footer {
+    background: #003366;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    font-size: 0.9rem;
+}
