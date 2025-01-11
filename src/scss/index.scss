@@ -1,0 +1,142 @@
+@use 'mixins' as *;
+
+// Variables para colores y tipografía
+$primary-color: #007bff;
+$secondary-color: #6c757d;
+$error-color: #dc3545;
+$font-family: 'Roboto', sans-serif;
+
+// General
+body {
+    font-family: $font-family;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+}
+
+// Contenedor general
+.contenedor-general {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #ffffff;
+}
+
+// Caja de fondo
+.caja-fondo {
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+    margin-bottom: 20px;
+
+    .caja-f-li, .caja-f-reg {
+        flex: 1;
+        text-align: center;
+        padding: 20px;
+        border: 1px solid $secondary-color;
+        border-radius: 5px;
+        margin: 0 10px;
+
+        h3 {
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: $secondary-color;
+            font-size: 14px;
+        }
+
+        button {
+            @include button-style($primary-color, #fff);
+            margin-top: 10px;
+        }
+    }
+}
+
+// Formularios
+.contenedor-formularios {
+    width: 50%;
+
+    form {
+        display: flex;
+        flex-direction: column;
+        background-color: #fff;
+        padding: 20px;
+        border: 1px solid $secondary-color;
+        border-radius: 5px;
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: $primary-color;
+        }
+
+        .grupo-input {
+            margin-bottom: 15px;
+            position: relative;
+
+            input, textarea {
+                @include form-input-style;
+            }
+
+            .form-val-edo {
+                position: absolute;
+                top: 50%;
+                right: 10px;
+                transform: translateY(-50%);
+                font-size: 20px;
+                color: $error-color;
+                visibility: hidden;
+            }
+
+            &.error .form-val-edo {
+                visibility: visible;
+            }
+
+            .form-input-error {
+                display: none;
+                color: $error-color;
+                font-size: 12px;
+                margin-top: 5px;
+            }
+
+            &.error .form-input-error {
+                display: block;
+            }
+        }
+
+        .form-error {
+            display: none;
+            background-color: $error-color;
+            color: #fff;
+            padding: 10px;
+            border-radius: 4px;
+            margin-bottom: 15px;
+            font-size: 14px;
+            text-align: center;
+
+            &.visible {
+                display: block;
+            }
+        }
+
+        button[type="submit"] {
+            @include button-style($primary-color, #fff);
+        }
+    }
+}
+
+// Reutilización de botones
+button {
+    &.btn-secondary {
+        @include button-style($secondary-color, #fff);
+    }
+}
+
+// Errores generales
+.form-error, .form-input-error {
+    @extend .error;
+}
