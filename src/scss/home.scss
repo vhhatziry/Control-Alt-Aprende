@@ -5,13 +5,14 @@ $text-dark: #343a40;
 $text-light: #ffffff;
 $bg-light: #f0f0f0;
 $bg-lighter: #f8f9fa;
+$card-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
 
 // Mixins
 @mixin transition($properties...) {
   transition: $properties 0.3s ease;
 }
 
-@mixin center-flex {
+@mixin flex-center {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -40,7 +41,6 @@ body {
     }
 
     &.active {
-      color: $text-light;
       font-weight: bold;
     }
   }
@@ -62,7 +62,7 @@ body {
 .hero {
   height: 20vh;
   background-color: $text-light;
-  @include center-flex;
+  @include flex-center;
 
   .hero-image {
     max-width: 45%;
@@ -91,7 +91,7 @@ body {
 
   &:hover {
     transform: scale(1.1);
-    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+    box-shadow: $card-shadow;
   }
 
   .card-img-top {
@@ -116,5 +116,43 @@ body {
 
   &:hover .section-card {
     background-color: $bg-lighter;
+  }
+}
+
+// Container and Grid
+.container {
+  max-width: 1140px;
+}
+
+.row {
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 0;
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: calc(-0.5 * 1rem);
+  margin-left: calc(-0.5 * 1rem);
+}
+
+.col-md-3 {
+  flex: 0 0 auto;
+  width: 18rem;
+  padding: 1rem;
+}
+
+// Card Defaults
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: var(--bs-card-bg, $bg-light);
+  border: var(--bs-card-border-width, 1px) solid var(--bs-card-border-color, $primary-color);
+  border-radius: var(--bs-card-border-radius, 0.25rem);
+
+  &-body {
+    flex: 1 1 auto;
+    padding: 1rem;
+    color: var(--bs-card-color, $text-dark);
   }
 }
