@@ -3,25 +3,22 @@
 @use 'sass:color'; 
 
 /* Paleta de Colores */
-/* Gradient in RGBA */
-$deg-green: linear-gradient(to right, rgba(100, 185, 84, 1) 0%, 14.146341383457184%, rgba(148, 210, 65, 1) 28.292682766914368%, 64.14634138345718%, rgba(167, 222, 56, 1) 100%);
-$deg-green-2: linear-gradient(to right,rgba(76, 176, 90, 1) 10%, rgba(132, 203, 73, 1) 29%, rgba(180, 230, 43, 1) 100%);
-/* Green Healthy Palette */
-$baby-powder: #FAFBF7ff;
-$mindaro: #E8FCAC;
-$lime: #b4e62bff;
-$yellow-green: #A2CE1Bff;
-$apple-green: #9CC029ff;
-$viridian: #237E65ff;
-$sea-green: #3B8F52ff;  
-$jungle-green: #209B78ff;
-$zomp: #239a7aff;
-$dark-spring-green: #216F55ff;
-$cal-poly-green: #1a4726ff;
-$dayvs-gray: #4a4a4b;
-$black-olive: #34403Bff;
-$night: #0C0D12ff;
+$primary-color: rgba(86, 124, 141, 1);
+$secondary-color: rgba(255, 255, 242, 1);
+$background-color: rgba(245, 239, 235, 1);
+$text-color: rgba(47, 65, 86, 1);
+$light-gray: rgba(200, 217, 230, 1);
+$border-color: rgba(200, 217, 230, 0.3); 
+$primary-color-half: rgba(86, 124, 141, 0.5);
+$text-color-half: rgba(47, 65, 86, 0.5);
+$variation-color: rgb(86, 141, 136);
+$variation-color2: rgba(86, 141, 136, 0.05);
+$variation-color3: rgba(151, 159, 170, 1);
 
+//Algunos degradados
+$gradient1: linear-gradient(to right, #9133e8, #0f33d5,var(--primary-color), #EEB211);
+$google_gradient: linear-gradient(to right, #3369E8, #D50F25, #EEB211, #009925);
+$email_gradient: linear-gradient(to right, #BB0018, #EA4335, #FBBC05, #34A853);
+            
 //Fuente para titulo
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-

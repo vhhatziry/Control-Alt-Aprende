@@ -1,0 +1,199 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+// General Styles
+body {
+    @include flex(column);
+    background-color: $background-color;
+    color: $text-color;
+    min-height: 100vh;
+}
+
+// Estructura Principal
+.main-container {
+    display: grid;
+    grid-template-areas: 
+        "header header"
+        "aside main";
+    grid-template-rows: auto 1fr;
+    grid-template-columns: 20% 1fr;
+    height: 100vh;
+
+    .main-content {
+        grid-area: main;
+        padding: 1.5rem;
+        background-color: $background-color;
+        overflow-y: auto;
+    }
+
+    .sidebar {
+        grid-area: aside;
+        @include flex(column);
+        align-items: center;
+        padding: 0.5rem 1rem;
+        background-color: $primary-color;
+        color: $secondary-color;
+
+        nav ul {
+            list-style: none;
+
+            li {
+                margin: 1rem 0;
+                line-height: 2;
+
+                a {
+                    @include flex(center);
+                    color: $secondary-color;
+                    gap: 0.5rem;
+                    text-decoration: none;
+
+                    &:hover {
+                        color: $light-gray;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Header
+.nav_header {
+    grid-area: header;
+    height: 100px;
+    background-color: $text-color;
+    @include flex(space-between);
+    padding: 0 1rem;
+
+    h1 {
+        color: $secondary-color;
+        font-family: 'Scripter';
+        font-size: 2.5rem;
+        margin-right: auto;
+    }
+
+    img {
+        border-radius: 5px;
+        margin-left: 1rem;
+    }
+
+    label {
+        color: $secondary-color;
+        font-size: 1.2rem;
+        padding: 0 1rem;
+        text-align: center;
+    }
+
+    .last_label {
+        margin-right: 4rem;
+    }
+}
+
+// Botones
+button {
+    padding: 0.5rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+
+    &.search-topic-btn {
+        @include flex(center);
+        background-color: $text-color;
+        color: $secondary-color;
+        gap: 0.5rem;
+        width: 80px;
+
+        &:hover {
+            background-color: $secondary-color;
+            color: $text-color;
+        }
+    }
+
+    &.follow-btn {
+        background-color: $variation-color;
+        color: $secondary-color;
+        padding: 1rem 0.5rem;
+        border: 2px solid;
+        font-weight: bolder;
+
+        &:hover {
+            border-color: $light-gray;
+        }
+    }
+}
+
+// Tarjetas de Temas
+.topics {
+    @include flex(column);
+    gap: 1.5rem;
+
+    .topic-card {
+        @include flex(center);
+        background-color: $light-gray;
+        border: 1px solid $light-gray;
+        border-radius: 10px;
+        padding: 1rem;
+        gap: 1rem;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        transition: background-color 0.3s, transform 0.3s;
+
+        &:hover {
+            background-color: $primary-color;
+            border-color: $text-color;
+            color: $light-gray;
+            transform: scale(1.02);
+        }
+
+        img {
+            width: 6rem;
+            height: 6rem;
+            border-radius: 50%;
+            border: 2px solid $light-gray;
+            object-fit: cover;
+        }
+
+        h3 {
+            margin: 0;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: $text-color;
+        }
+
+        p {
+            margin: 0.2rem 0 0;
+            font-size: 0.9rem;
+            color: $text-muted-color;
+        }
+
+        .topic-stats {
+            @include flex(center);
+            gap: 1rem;
+
+            span {
+                font-size: 0.85rem;
+                @include flex(center);
+                gap: 0.3rem;
+            }
+
+            i {
+                font-size: 1rem;
+                color: $icon-color;
+            }
+        }
+    }
+}
+
+// Responsivo
+@media (max-width: 768px) {
+    .main-container {
+        grid-template-areas: 
+            "header"
+            "main"
+            "aside";
+        grid-template-rows: auto 1fr auto;
+        grid-template-columns: 1fr;
+
+        .sidebar {
+            height: auto;
+        }
+    }
+}

@@ -1,0 +1,24 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.main-container {
+    display: grid;
+    grid-template-areas:
+        "header header"
+        "main main";
+    grid-template-rows: auto 1fr;
+    grid-template-columns: 1fr;
+    height: 100vh;
+    background-color: $background-color;
+}
+
+.header {
+    grid-area: header;
+    height: 100px;
+    background-color: $text-color;
+    color: $secondary-color;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
+}

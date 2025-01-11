@@ -1,0 +1,218 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+// Estilos generales
+body {
+    background-color: $background-color;
+    color: $text-color;
+    @include flex(column);
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+// Contenedor principal
+.main-container {
+    display: grid;
+    grid-template-areas: 
+        "header header"
+        "main main";
+    grid-template-rows: auto 1fr;
+    grid-template-columns: 1fr;
+    height: 100vh;
+
+    .main-content {
+        grid-area: main;
+        overflow-y: auto;
+        padding: 1.5rem;
+        background-color: $secondary-color;
+    }
+}
+
+// Header
+.nav_header {
+    grid-area: header;
+    height: 100px;
+    background-color: $text-color;
+    @include flex(space-between);
+    padding: 0 1rem;
+
+    h1 {
+        color: $secondary-color;
+        font-family: 'Scripter';
+        font-size: 2.5rem;
+        margin-right: auto;
+    }
+
+    img {
+        border-radius: 5px;
+        margin-left: 1rem;
+    }
+
+    label {
+        color: $secondary-color;
+        font-size: 1.2rem;
+        padding: 0 1rem;
+        text-align: center;
+    }
+
+    .last_label {
+        margin-right: 4rem;
+    }
+}
+
+// Encabezado de administrador
+.admin-header {
+    @include flex(center);
+    font-size: 3rem;
+    margin-right: 1rem;
+
+    img {
+        width: 30px;
+        height: 30px;
+        margin-right: 10px;
+    }
+}
+
+// Gestión de contenido
+.admin-content,
+.admin-users {
+    background-color: $variation-color3;
+    padding: 3rem 1rem 0;
+    border-radius: 0.2rem;
+    max-height: 24rem;
+    overflow-y: auto;
+
+    &.hidden {
+        display: none;
+    }
+}
+
+.admin-content-h2 {
+    color: $secondary-color;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    text-align: center;
+    background-color: $text-color;
+    padding: 1rem 1.5rem;
+    margin: -0.5rem auto -2rem auto;
+    position: sticky;
+    top: 10px;
+    z-index: 10;
+    width: 30%;
+}
+
+// Artículos
+.articles-container {
+    display: flex;
+    gap: 1rem;
+
+    .articles-column {
+        width: 50%;
+    }
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+
+        .articles-column {
+            width: 100%;
+        }
+    }
+}
+
+.article-card {
+    background-color: $primary-color;
+    color: $secondary-color;
+    padding: 1rem;
+    border-radius: 2rem;
+    margin-bottom: 1rem;
+    max-height: 6rem;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.5);
+    }
+
+    .article-header,
+    .article-footer {
+        @include flex(space-between);
+        margin-bottom: 0.5rem;
+
+        h3 {
+            margin: 0 1.5rem;
+            font-size: 1.2rem;
+        }
+
+        p {
+            font-size: 0.9rem;
+            font-style: italic;
+
+            &.author {
+                font-weight: bold;
+            }
+
+            &.comments {
+                color: $light-gray;
+            }
+        }
+    }
+
+    .article-actions {
+        @include flex(center);
+        gap: 0.5rem;
+
+        button {
+            background-color: $secondary-color;
+            border: none;
+            border-radius: 50%;
+            padding: 0.5rem;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+
+            &:hover {
+                background-color: rgba(255, 255, 255, 0.8);
+            }
+        }
+    }
+}
+
+// Botones de navegación
+.navigation-arrows {
+    @include flex(center);
+    margin-top: 1rem;
+
+    button {
+        background-color: $primary-color;
+        color: $secondary-color;
+        border: none;
+        padding: 0.5rem 0.5rem;
+        border-radius: 5px;
+        font-size: 1.2rem;
+        margin: -0.3rem 0.5rem;
+
+        &:hover {
+            background-color: $primary-color-half;
+        }
+    }
+}
+
+// Acciones de administrador
+.admin-actions {
+    margin-top: 1rem;
+    @include flex(wrap);
+    gap: 0.5rem;
+
+    button {
+        background-color: transparent;
+        color: $secondary-color;
+        border: none;
+        padding: 0.5rem 1rem;
+        border-radius: 5px;
+        cursor: pointer;
+
+        &:hover {
+            color: #007bff;
+        }
+    }
+}

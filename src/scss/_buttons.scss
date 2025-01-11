@@ -1,0 +1,30 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    @include poppins-regular();
+
+    &.primary {
+        background-color: $primary-color;
+        color: $secondary-color;
+
+        &:hover {
+            background-color: $primary-color-half;
+            color: $text-color;
+        }
+    }
+
+    &.secondary {
+        background-color: $secondary-color;
+        color: $primary-color;
+
+        &:hover {
+            background-color: $light-gray;
+            color: $text-color;
+        }
+    }
+}

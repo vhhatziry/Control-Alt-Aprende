@@ -103,39 +103,20 @@
   
 @mixin custom-scrollbar(){
     &::-webkit-scrollbar {
-      width: 1.5rem;
+        width: 1rem; 
     }
-  
+    
     &::-webkit-scrollbar-track {
-      background: $mindaro; 
-      border-radius: 0.5rem;
+        background: #f1f1f1; 
     }
-  
+    
     &::-webkit-scrollbar-thumb {
-      background: $zomp; 
-      border-radius: 0.5rem;
-      border: 0.2rem solid $jungle-green;
+        background: var(--text-color); 
+        border-radius: 0.4rem; 
     }
-  
+    
     &::-webkit-scrollbar-thumb:hover {
-      background: $dark-spring-green; 
-    }
-} 
-
-@mixin custom-scrollbar-variation(){
-    @include custom-scrollbar();   
-    &::-webkit-scrollbar-track {
-      background: $mindaro;
-    }
-  
-    &::-webkit-scrollbar-thumb {
-      background: $cal-poly-green; 
-      border-radius: 0.5rem;
-      border: 0.2rem solid $dark-spring-green;
-    }
-  
-    &::-webkit-scrollbar-thumb:hover {
-      background: $sea-green; 
+        background: var(--primary-color); 
     }
 } 
 
@@ -149,4 +130,15 @@
     -0.2rem 0.2rem 0 $contorno, /* Diagonal abajo izquierda */
     0.2rem -0.2rem 0 $contorno, /* Diagonal arriba derecha */
     -0.2rem -0.2rem 0 $contorno; /* Diagonal arriba izquierda */ 
+}
+
+@mixin scripter{
+    //Fuente de Navbar
+    @font-face {
+        font-family: 'scripterregular';
+        src: url('scripter-regular-webfont.woff2') format('woff2'),
+            url('scripter-regular-webfont.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
 }
