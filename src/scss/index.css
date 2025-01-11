@@ -1,0 +1,121 @@
+/* Estilo general para toda la página */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+
+}
+/* NAVBAR */
+.custom-navbar {
+  width: 100%; /* Ancho completo */
+  background-color: #2f4157; /* Color de fondo */
+  padding-top: 10px; /* Ajuste superior */
+  padding-bottom: 10px; /* Ajuste inferior */
+}
+
+/* Subrayar texto al pasar el mouse */
+.navbar .nav-link:hover {
+  text-decoration: underline;
+  transition: text-decoration 0.3s ease; /* Suaviza el efecto */
+}
+
+/* Cambiar colores de texto y enlaces */
+.custom-navbar .nav-link {
+  color: #ffffff; /* Color de los enlaces */
+  transition: color 0.3s ease;
+}
+
+.custom-navbar .nav-link:hover {
+  color: #f4efeb; /* Color al pasar el mouse */
+}
+
+/* Cambiar color del botón activo */
+.custom-navbar .nav-link.active {
+  color: #ffffff;
+  font-weight: bold;
+}
+
+/* Estilo para el logo */
+.logo {
+  height: 60px; /* Altura inicial */
+  width: auto; /* Mantener proporciones */
+  margin-right: 30px; /* Espaciado con el texto */
+  vertical-align: middle; /* Alineación vertical */
+  transform: scale(1.4); /* Escala el logo para que parezca más grande */
+  transform-origin: left center; /* Punto de referencia para el escalado */
+}
+
+
+/* Responsividad para pantallas más pequeñas */
+@media (max-width: 768px) {
+  .logo {
+      transform: scale(1); /* Tamaño más pequeño en pantallas pequeñas */
+  }
+}
+
+/* Sección del logo principal (hero) */
+.hero {
+  height: 20vh; /* Altura fija del contenedor principal */
+  background-color: #ffffff; /* Color de fondo */
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Centrar imagen horizontal y verticalmente */
+}
+
+/* Imagen principal dentro del hero */
+.hero-image {
+  max-width: 45%; /* Ancho máximo igual al contenedor */
+  height: auto; /* Mantener proporción de la imagen */
+}
+
+/* Título de la sección de bienvenida */
+.section-title {
+  text-align: center;
+  margin: 40px 0 20px;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #343a40; /* Color oscuro */
+}
+
+/* Estilo general para las tarjetas */
+.section-card {
+  background-color: #f0f0f0; /* Fondo gris claro */
+  border: none; /* Sin bordes */
+  text-align: center; /* Centrar contenido */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out; /* Animaciones suaves */ 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Título y texto dentro de las tarjetas */
+.card-title {
+  font-size: 1.2rem; /* Tamaño del título */
+  font-weight: bold;
+  color: #343a40; /* Color oscuro */
+}
+
+/* Efecto hover en las tarjetas */
+.section-card:hover {
+  transform: scale(1.1); /* Aumentar el tamaño de la tarjeta */
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3); /* Sombra cuando se pasa el mouse */
+}
+
+/* Imagen dentro de las tarjetas */
+.card-img-top {
+  width: 80px; /* Ancho fijo */
+  margin: 10px auto; /* Centrar horizontalmente */
+}
+
+/* Enlaces de las tarjetas */
+.card-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Fondo sombreado para las secciones */
+.card-link:hover .section-card {
+  background-color: #f8f9fa; /* Fondo más claro al hacer hover */
+}
+
+
