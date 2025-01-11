@@ -1,23 +1,23 @@
 {
   "name": "proyecto2",
   "version": "1.0.0",
-  "description": "Compiladores LL(1)",
-  "main": "index.html",
+  "description": "Ctrl+Alt+Aprende",
+  "main": "index.php",
   "scripts": {
     "dev": "gulp",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vhhatziry/foro_ctrlaltaprende.git"
+    "url": "git+https://github.com/vhhatziry/Control-Alt-Aprende"
   },
   "author": "Hatziry Vitales Herrera",
   "license": "ISC",
   "type": "module",
   "bugs": {
-    "url": "https://github.com/vhhatziry/foro_ctrlaltaprende/issues"
+    "url": "https://github.com/vhhatziry/Control-Alt-Aprende/issues"
   },
-  "homepage": "https://github.com/vhhatziry/foro_ctrlaltaprende#readme",
+  "homepage": "https://github.com/vhhatziry/Control-Alt-Aprende#readme",
   "devDependencies": {
     "@babel/core": "^7.26.0",
     "@babel/preset-env": "^7.26.0",

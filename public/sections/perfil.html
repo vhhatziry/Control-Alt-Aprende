@@ -45,35 +45,6 @@
             <div><strong>180</strong> Seguidos</div>
         </div>
         
-        <script>
-            // Estado inicial de seguimiento
-            let isFollowing = false;
-            let followersCount = 120; // Número inicial de seguidores
-        
-            // Función para cambiar el estado de seguimiento
-            function toggleFollow() {
-                const followButton = document.getElementById("follow-button");
-                const followersCountElement = document.getElementById("followers-count");
-        
-                if (isFollowing) {
-                    // Si ya está siguiendo, se deja de seguir
-                    isFollowing = false;
-                    followersCount--;
-                    followButton.textContent = "Seguir";
-                    followButton.style.backgroundColor = "#567C8D"; // Color original del botón
-                } else {
-                    // Si no está siguiendo, se comienza a seguir
-                    isFollowing = true;
-                    followersCount++;
-                    followButton.textContent = "Siguiendo";
-                    followButton.style.backgroundColor = "#2F4156"; // Cambia el color del botón
-                }
-        
-                // Actualizar el contador de seguidores
-                followersCountElement.textContent = followersCount;
-            }
-        </script>
-        
         <!-- Contacto -->
         <div class="contact">
             <h2 class="section-title">Contacto</h2>

@@ -1,0 +1,245 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+// Estilos generales
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #FFFFFF;
+  color: $color-texto;
+}
+
+.profile-container {
+  text-align: center;
+  max-width: 800px;
+  margin: 20px auto;
+  background: $color-fondo;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+}
+
+.cover-photo {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  background-color: $color-secundario;
+}
+
+.profile-header {
+  position: relative;
+  text-align: center;
+  margin-top: -100px; 
+}
+
+.profile-photo {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 6px solid #FFFFFF;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: #FFFFFF;
+}
+
+.profile-info {
+  padding: 20px;
+
+  h1 {
+    font-size: 24px;
+    color: $color-texto;
+    text-align: center;
+    flex-grow: 1;
+    margin: 0;
+  }
+}
+
+// Botones
+.btn {
+  @include boton-base;
+}
+
+.btn-secondary {
+  @include boton-base;
+  background-color: $color-secundario;
+  color: $color-texto;
+
+  &:hover {
+    background-color: #A0B5C6;
+  }
+}
+
+// Formulario de edición
+.edit-form {
+  display: none;
+  background-color: $color-fondo;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  margin: 20px auto;
+  text-align: left;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+
+  h3 {
+    margin-top: 0;
+    font-size: 20px;
+  }
+
+  label {
+    display: block;
+    margin: 10px 0 5px;
+    font-size: 14px;
+  }
+
+  input, 
+  textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid $color-secundario;
+    border-radius: 5px;
+    font-size: 14px;
+    margin-bottom: 15px;
+  }
+}
+
+// Información de seguidores
+.followers-info {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin: 15px 0;
+  font-size: 18px;
+  color: $color-texto;
+}
+
+// Skills
+.skills-section {
+  background-color: $color-fondo;
+  padding: 15px;
+  border-radius: 8px;
+  margin: 20px 0;
+  text-align: left;
+  max-width: 800px;
+  margin: 20px auto;
+
+  h2 {
+    color: $color-texto;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  .skills-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: space-between;
+  }
+
+  .skill-card {
+    background-color: $color-secundario;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 150px;
+    flex: 1;
+
+    i {
+      font-size: 20px;
+      color: $color-principal;
+      margin-bottom: 5px;
+    }
+
+    h3 {
+      color: $color-texto;
+      margin: 5px 0;
+      font-size: 14px;
+    }
+
+    p {
+      font-size: 12px;
+      color: $color-texto;
+    }
+  }
+}
+// Portfolio
+.portfolio {
+  background-color: $color-fondo;
+  padding: 20px;
+  border-radius: 8px;
+  margin: 20px 0;
+  text-align: center;
+
+  h2 {
+    color: $color-texto;
+    margin-bottom: 15px;
+  }
+
+  button {
+    @include boton-base;
+    margin: 5px;
+  }
+
+  .portfolio-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .portfolio-item {
+    text-align: center;
+    cursor: pointer;
+
+    img {
+      width: 150px;
+      height: 150px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+
+    p {
+      margin-top: 10px;
+      font-size: 14px;
+      color: $color-texto;
+    }
+  }
+}
+
+// Contact buttons
+.contact-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 15px;
+
+  .contact-button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    background-color: $color-principal;
+    color: #FFFFFF;
+    border-radius: 50%;
+    font-size: 20px;
+    text-decoration: none;
+    transition: transform 0.2s, background-color 0.2s;
+
+    &:hover {
+      background-color: $color-texto;
+      transform: scale(1.1);
+    }
+  }
+}

@@ -19,6 +19,13 @@ $variation-color3: rgba(151, 159, 170, 1);
 $gradient1: linear-gradient(to right, #9133e8, #0f33d5,var(--primary-color), #EEB211);
 $google_gradient: linear-gradient(to right, #3369E8, #D50F25, #EEB211, #009925);
 $email_gradient: linear-gradient(to right, #BB0018, #EA4335, #FBBC05, #34A853);
-            
+
+
+// Variables para profile
+$color-fondo: #F5EFEB; // Beige
+$color-texto: #2F4156; // Navy
+$color-principal: #567C8D; // Teal
+$color-secundario: #C8D9E6; // Sky Blue
+
 //Fuente para titulo
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');

@@ -1,15 +1,19 @@
+<?php
+// Incluir la barra de navegación
+include 'nav.php';
+?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modular Website</title>
+    <title>Ctrl + Alt + Aprende</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-<nav>
-    <a href="?section=home">Inicio</a>
-    <a href="?section=forum">Foro</a>
-    <a href="?section=signin">Iniciar Sesión</a>
-    <a href="?section=admin">Admin</a>
-</nav>
+    <?php
+    // Renderizar la barra de navegación
+    renderNav();
+    ?>
