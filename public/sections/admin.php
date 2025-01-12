@@ -79,6 +79,9 @@
             </div>
         </main>
     </div>
-    <script src="script.js"></script>
+    <script src="../../src/js/forum.js"></script>
 </body>
 
+<?php
+// Fin del contenido del cuerpo
+?>
